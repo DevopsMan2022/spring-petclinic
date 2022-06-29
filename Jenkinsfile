@@ -1,12 +1,12 @@
-pipeline{
-    agent{ label 'JDK8'}
-    options{
-        timeout(unit: 'SECONDS', time: 5)\
-        retry(1)
+pipeline {
+    agent { label 'JDK11' }
+    options { 
+        timeout(time: 1, unit: 'HOURS')
+        retry(2) 
     }
-    triggers { 
-        cron('H */1 * * 1-5') 
-        }
+    triggers {
+        cron('0 * * * *')
+    }
     stages {
         stage('Source Code') {
             steps {
