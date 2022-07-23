@@ -16,7 +16,7 @@ pipeline{
         }
         stage('Build the code'){
             steps{
-                sh "mvn clean package"
+                sh "mvn package"
             }
         }
         stage('Publish test results'){
