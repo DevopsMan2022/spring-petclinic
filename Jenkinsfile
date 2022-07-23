@@ -8,6 +8,7 @@ pipeline{
     stages{
     
         stage('Source Code') {
+            agent any
             steps {
                 git url: 'https://github.com/DevopsMan2022/spring-petclinic.git', 
                 branch: 'branch_develop1'
